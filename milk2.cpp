@@ -28,7 +28,7 @@ int main(){
   
   int longestMilk = 0;
   int longestNoMilk = 0;
-  int len;
+  int length;
   bool curr;
   for (int i = 0; i < len; i += length){
     curr = times[i];
