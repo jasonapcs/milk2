@@ -14,15 +14,18 @@ int main(){
   int n;
   input >> n;
   int len = 0;
+  int firststart;
   std::bitset<1000000> times;
   for (int i = 0; i < n; i++){
     int start; int end;
+    firststart = start;
     input >> start >> end;
     
     for (int j = start; j < end; j++)
       times[j] = true;
     
     if (end > len) len = end;
+    if (start < firststart) firststart = start;
   }
   input.close();
   
@@ -30,10 +33,10 @@ int main(){
   int longestNoMilk = 0;
   int length;
   bool curr;
-  for (int i = 0; i < len; i += length){
+  for (int i = firststart; i < len; i += length){
     curr = times[i];
     length = 0;
-    for (int j = i + 1; j < len; j++)
+    for (int j = i; j < len; j++)
       if (times[j] == curr) length++;
     if (curr) if (longestMilk < length) longestMilk = length;
     else if (longestNoMilk < length) longestNoMilk = length;
