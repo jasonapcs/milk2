@@ -30,13 +30,13 @@ int main(){
   int longestNoMilk = 0;
   int len;
   bool curr;
-  for (int i = 0; i < len; i += len){
+  for (int i = 0; i < len; i += length){
     curr = times[i];
-    len = 0;
+    length = 0;
     for (int j = i + 1; j < len; j++)
-      if (times[j] == curr) len++;
-    if (curr) if (longestMilk < len) longestMilk = len;
-    else if (longestNoMilk < len) longestNoMilk = len;
+      if (times[j] == curr) length++;
+    if (curr) if (longestMilk < length) longestMilk = length;
+    else if (longestNoMilk < length) longestNoMilk = length;
   }
   
   std::ofstream output("milk2.out");
