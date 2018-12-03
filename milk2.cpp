@@ -34,18 +34,15 @@ int main(){
 	int length;
 	bool curr;
 	curr = times[firststart];
-	//std::cout << firststart << "\n" << curr;
 	for (int i = firststart; i < len; i++){
 		if (times[i] == curr) {
 			length++;
-			//std::cout << curr;
 		}
 		else{
-			if (curr) if (longestMilk < length) longestMilk = length;
-			if (!curr) if (longestNoMilk < length) longestNoMilk = length;
+			if (curr) {if (longestMilk < length) longestMilk = length;}
+			else {if (longestNoMilk < length) longestNoMilk = length;}
 			length = 1;
 			curr = times[i];
-			//std::cout << curr;
 		}
 	}
 	
