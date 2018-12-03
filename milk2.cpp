@@ -10,7 +10,7 @@ LANG: C++
 
 int main(){
   
-  std::ifsteam input("milk2.in");
+  std::ifstream input("milk2.in");
   int n;
   input >> n;
   int len = 0;
